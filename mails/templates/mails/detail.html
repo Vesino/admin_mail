@@ -3,13 +3,14 @@
 {% block content %}
     <div class="row">
         <div class="col">
-            <h1>Crear nuevo correo</h1>
+            <h1>{{ object.subject }}</h1>
+            <a href="{% url 'mails:send' object.id %}" class="btn btn-primary">Enviar correo</a>
         </div>
     </div>
     <hr>
     <div class="row">
         <div class="col">
-            {% include 'mails/snippets/form.html' with value='Crear' class='btn-primary'%}
+            <p>{{ object.content }}</p>
         </div>
     </div>
 {% endblock %}

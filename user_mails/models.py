@@ -9,7 +9,7 @@ class UserMail(models.Model):
     mail = models.ForeignKey(Mail, on_delete=models.CASCADE)
     read = models.BooleanField(default=False)
     token = models.CharField(max_length=100, null=True, blank=True)
-    mail_sent_at = models.DateTimeField(default=True, null=True, blank=True)
+    mail_sent_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
